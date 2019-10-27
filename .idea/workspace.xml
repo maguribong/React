@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffd8f9dd-ab89-499b-9a2d-eff8b4f380eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myfirstreact/src/Person/Person.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myfirstreact/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstreact/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myfirstreact/src/Person/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/myfirstreact/src/Person/Person.js" afterDir="false" />
@@ -23,6 +24,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,6 +50,7 @@
       <updated>1571940916694</updated>
       <workItem from="1571940917832" duration="78000" />
       <workItem from="1571943313387" duration="5543000" />
+      <workItem from="1572053728366" duration="12706000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1571940985336</created>

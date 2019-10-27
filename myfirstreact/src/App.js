@@ -13,33 +13,46 @@ import Person from './Person/Person';
  * className ="csscode"
  * export default classname. React uses in JSX in javascript file.  vs in Angular, angular uses class='csscode ' in html.
  * has have to be in one root element(ex. <div>
- * */
+ **/
 
 /** probs vs state
- * state is feature from Component in React.*/
+ * state is feature from Component in React.
+ * stateful component if you use state, multiple components holding.
+ * stateful component makes you help to manage application. */
 class App extends Component {
     state = {
-        persons: [
-            { name: 'Max', age:28 },
-            { name: 'Won', age:99 },
-            { name: 'Jojo', age:999 },
+        people: [
+            {name: 'Wonseo', age: 27},
+            {name: 'Ao Xiang', age: 26},
+            {name: 'JOJO', age: 1},
         ],
-        otherStates: 'some other value'
-
+        otherState: 'some other value'
     }
-
-    switchNameHandler  = (newName) => {
-        //console.log('was clicked');
-        //DONT DO THIS this.state.persons[0].name = 'WONSEO';
-        //otherStates is not going to be changed.
+/**useState replace the current state instead of targetting only the place you want to change.*/
+// const [otherState, setOtherState] = useState('some other value');
+    // switchNameHandler  = (newName) => {
+    //     //console.log('was clicked');
+    //     //DONT DO THIS this.state.persons[0].name = 'WONSEO';
+    //     //otherStates is not going to be changed.
+    //     this.setState({
+    //         persons: [
+    //             { name: newName, age:28 },
+    //             { name: 'WonSEO', age:27 },
+    //             { name: 'Jorno Joski', age:1 },
+    //         ]
+    //     })
+    // }
+    /** dont change state directly*/
+    switchNameHandler = (newName) => {
+        console.log('is working');
         this.setState({
-            persons: [
-                { name: newName, age:28 },
-                { name: 'WonSEO', age:27 },
-                { name: 'Jorno Joski', age:1 },
+            people:[
+                {name: newName, age: 27},
+                {name: 'Ao Xiang wife', age: 26},
+                {name: 'JOJO daugher', age: 1},
             ]
         })
-    }
+    };
 
     nameChangeHandler = (event) => {
         this.setState({
@@ -49,30 +62,40 @@ class App extends Component {
                 { name: 'Jorno Joski', age:1000 },
             ]
         })
-    }
-
+    };
+/** if function or stuffs are in inside function, have to call this.*/
     render() {
+        const style = {
+            backgroundColor: 'white',
+            font: 'inherit',
+            border: '1px solid blue',
+            padding: '8px',
+            cursor: 'pointer'
+        };
+
         return (
             <div className="App">
                 <h1>this is React App</h1>
                 <p>this is wokring too</p>
-                <button onClick={() => this.switchNameHandler('JOJOSKI')}>Switch Name</button>
+                <button style={style}
+                        onClick={this.switchNameHandler.bind(this,'This is bind properties: WONSEO LOVES AOXIANG')}>SwitchName</button>
                 <Person
-                    name={this.state.persons[0].name}
-                    age={this.state.persons[0].age}/>
+                    name={this.state.people[0].name}
+                    age={this.state.people[0].age}/>
                 <Person
-                    name={this.state.persons[1].name}
-                    age={this.state.persons[1].age}
-                    click={this.switchNameHandler.bind(this,'Ao Xiang')}> My Hobbies: Racing</Person>
+                    name={this.state.people[1].name}
+                    age={this.state.people[1].age}
+                    click={this.switchNameHandler.bind(this,'This is bind properties: XIang loves wonseo')}
+                    changed= {this.nameChangeHandler}> My Hobbies: Racing</Person>
                 <Person
-                    name={this.state.persons[2].name}
-                    age={this.state.persons[2].age}/>
-                <Person/>
+                    name={this.state.people[2].name}
+                    age={this.state.people[2].age}/>
             </div>
         );
     }
-
 }
+
+export default App;
 // let App = () => {
 //     return (
 //         <div className="App">
@@ -86,9 +109,3 @@ class App extends Component {
 //         </div>
 //     );
 // }
-
-export default App;
-
-
-/**angular =chen
- * chris =*/
